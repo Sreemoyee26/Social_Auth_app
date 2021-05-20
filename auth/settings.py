@@ -38,8 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
-    'social_auth_app'
+    'social_auth_app',
+    'django.contrib.sites',  # new
+    # 3rd party
+    'allauth', # new
+    'allauth.account', # new
+    'allauth.socialaccount', # new
+    # social providers
+    'allauth.socialaccount.providers.github', # new
+    'allauth.socialaccount.providers.twitter', # new
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +66,7 @@ ROOT_URLCONF = 'auth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':  [str(BASE_DIR.joinpath("templates"))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,38 +140,14 @@ STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.linkedin.LinkedinOAuth2',
-    'social_core.backends.instagram.InstagramOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
+    'allauth.account.auth_backends.AuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = "none"
+LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_LOGOUT_REDIRECT_URL = '../../home'
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/social_auth/'
-LOGOUT_URL = '/logout/'
-LOGOUT_REDIRECT_URL = '/login/'
-
-SOCIAL_AUTH_FACEBOOK_KEY ='251610603417878'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'b51998ab53e9c809af1234b7d4700969'
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] # add this
-SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       # add this
-  'fields': 'id, name, email, picture.type(large), link'
-}
-SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 # add this
-    ('name', 'name'),
-    ('email', 'email'),
-    ('picture', 'picture'),
-    ('link', 'profile_url'),
-]
-
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77eao7r41rbcxh'         #Client ID
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'ASYhsI6BF4kLf1eZ'  #Client Secret
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_basicprofile', 'r_emailaddress']
-SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['email-address', 'formatted-name', 'public-profile-url', 'picture-url']
-SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [
-    ('id', 'id'),
-    ('formattedName', 'name'),
-    ('emailAddress', 'email_address'),
-    ('pictureUrl', 'picture_url'),
-    ('publicProfileUrl', 'profile_url'),
-]
+#SECURE_SSL_REDIRECT= True
+#MIDDLEWARE_CLASSES= 'SecurityMiddleware'
