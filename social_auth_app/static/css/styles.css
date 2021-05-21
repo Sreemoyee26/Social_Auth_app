@@ -11,7 +11,7 @@ body{
 .container2{
   background-color: honeydew;
   width:40vw;
-  height:60vh;
+  height:75vh;
   margin-left: 30vw;
 }
 h1{
@@ -44,7 +44,7 @@ a{
   text-decoration: none;
   border:2px solid brown;
 }
-a:hover,.sub:hover{
+a:hover{
   color: #2161f2;
   background: #f0f4fe;
   text-decoration: none;
@@ -57,4 +57,7 @@ h3{
 }
 .log{
   background-color:blue;
+}
+.sign{
+  background-color: burlywood;
 }

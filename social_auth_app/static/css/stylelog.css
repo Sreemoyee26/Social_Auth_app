@@ -1,0 +1,22 @@
+.{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(56, 55, 55);;
+}
+.container1{
+    text-align: center;
+    padding-top:25vh;
+  }
+  .container2{
+    background-color: honeydew;
+    width:40vw;
+    height:45vh;
+    margin-left: 30vw;
+  }
+  h1{
+    color: rgb(19, 69, 109);
+    font-size: 3em;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    padding-top:2%;
+  }

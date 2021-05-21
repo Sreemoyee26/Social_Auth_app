@@ -1,5 +1,6 @@
 {% load socialaccount %}
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +34,10 @@
           <a href="{% provider_login_url 'google' %}" class="goo">Login With Google</a>
           <br>
           <a href="{% provider_login_url 'facebook' %}" class="face">Login With Facebook</a>
+          <br><br>
+          <a href="{% url 'account_login' %}" style="color:blue" class="sign">Sign In </a>
+          <br>
+          <a href="{% url 'account_signup' %}" style="color:blue" class="sign">Sign Up </a>
 
         {% endif %}
       </div>
