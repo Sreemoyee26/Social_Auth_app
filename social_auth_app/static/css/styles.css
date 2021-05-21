@@ -1,3 +1,60 @@
+.{
+  box-sizing: border-box;
+}
 body{
-  background-color: aquamarine;
+  background-color:rgb(56, 55, 55);
+}
+.container1{
+  text-align: center;
+  padding-top:8vh;
+}
+.container2{
+  background-color: honeydew;
+  width:40vw;
+  height:60vh;
+  margin-left: 30vw;
+}
+h1{
+  color: rgb(19, 69, 109);
+  font-size: 3em;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  padding-top:5%;
+}
+.git{
+  background-color: black;
+}
+.twit{
+  background-color:green;
+}
+.goo{
+  background-color: crimson;
+}
+.face{
+  background-color: blue;
+}
+a{
+  color:white;
+  font-size: 2em;
+  border-radius: 20px;
+  border: darkgray;
+  padding:0.1%;
+  display: block;
+  width:60%;
+  margin-left:20%;
+  text-decoration: none;
+  border:2px solid brown;
+}
+a:hover,.sub:hover{
+  color: #2161f2;
+  background: #f0f4fe;
+  text-decoration: none;
+  border: 2px outset #2161f2;
+}
+h3{
+  font-size: 3em;
+  color:blue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.log{
+  background-color:blue;
 }

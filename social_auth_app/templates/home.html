@@ -14,27 +14,28 @@
   </head>
 
   <body>
-    <div class="container" style="text-align: center; padding-top: 10%;">
-      <h1>Django Social Login</h1>
+    <div class="container1">
+      <div class="container2">
+        <h1>Django Social Login</h1>
 
-      <br /><br />
+        <br>
 
-      {% if user.is_authenticated %}
-        <h3>Welcome {{ user.username }} !!!</h3>
-        <br /><br />
-        <a href="{% url 'account_logout' %}">Logout</a>
-      {% else %}
+        {% if user.is_authenticated %}
+          <h3>Welcome {{ user.username }} !!!</h3>
+          <br>
+          <a href="{% url 'account_logout' %}" class="log">Logout</a>
+        {% else %}
 
-        <a href="{% provider_login_url 'github' %}" class="git"> Login with GitHub</a>
+          <a href="{% provider_login_url 'github' %}" class="git"> Login with GitHub</a>
+          <br>
+          <a href="{% provider_login_url 'twitter' %}" class="twit">Login with Twitter</a>
+          <br>
+          <a href="{% provider_login_url 'google' %}" class="goo">Login With Google</a>
+          <br>
+          <a href="{% provider_login_url 'facebook' %}" class="face">Login With Facebook</a>
 
-        <a href="{% provider_login_url 'twitter' %}" class="twit">Login with Twitter</a>
-
-        <a href="{% provider_login_url 'google' %}" class="goo">Login With Google</a>
-
-        <a href="{% provider_login_url 'facebook' %}" class="face">Login With Facebook</a>
-
-      {% endif %}
+        {% endif %}
+      </div>
     </div>
   </body>
-  
 </html>
