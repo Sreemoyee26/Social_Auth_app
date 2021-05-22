@@ -3,20 +3,18 @@
 }
 body{
   background-color:rgb(56, 55, 55);
-}
-.container1{
   text-align: center;
-  padding-top:8vh;
 }
-.container2{
+.container{
   background-color: honeydew;
-  width:40vw;
-  height:75vh;
-  margin-left: 30vw;
+  width:50vw;
+  height:70vh;
+  margin-top:10vh;
+  margin-left: 25vw;
 }
 h1{
   color: rgb(19, 69, 109);
-  font-size: 3em;
+  font-size: 3vw;
   font-family:Georgia, 'Times New Roman', Times, serif ;
   padding-top:5%;
 }
@@ -34,7 +32,7 @@ h1{
 }
 a{
   color:white;
-  font-size: 2em;
+  font-size: 2vw;
   border-radius: 20px;
   border: darkgray;
   padding:0.1%;
@@ -51,7 +49,7 @@ a:hover{
   border: 2px outset #2161f2;
 }
 h3{
-  font-size: 3em;
+  font-size: 3vw;
   color:blue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
